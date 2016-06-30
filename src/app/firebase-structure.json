@@ -1,27 +1,27 @@
 {
-	"user": {
-		"hodor@gmail.com": {
+	"users": {
+		"aG9kb3JAZ21haWwuY29t": {
 			"name": "Big Hodor",
 			"username": "HODOR",
 			"password": "login",
 			"age": 32,
-			"team": {
+			"teams": {
 				"Ho!": true
 			}
 		},
-		"jamie@gmail.com": {
+		"amFtaWVAZ21haWwuY29t": {
 			"name": "SirJamie",
 			"username": "Jamie1",
 			"password": "teip",
 			"age": 27,
-			"team": {
+			"teams": {
 				"The Lancasters": true
 			}
 		}
 	},
-	"team": {
+	"teams": {
 		"Ho!": {
-			"user": "hodor@gmail.com",
+			"user": "aG9kb3JAZ21haWwuY29t",
 			"ground-name": "Winterfell",
 			"players": {
 				"1": true,
@@ -36,7 +36,7 @@
 			}
 		},
 		"The Lancasters": {
-			"user": "jamie@gmail.com",
+			"user": "amFtaWVAZ21haWwuY29t",
 			"ground-name": "Castle Black",
 			"players": {
 				"2": true,
@@ -50,36 +50,36 @@
 			}
 		}
 	},
-	"player": {
-		"1": {
+	"players": {
+		"p1": {
 			"name": "John Snow",
 			"age": 24,
 			"batting": 8,
 			"bowling": 24,
 			"fittness": 10
 		},
-		"2": {
+		"p2": {
 			"name": "Jamie",
 			"age": 32,
 			"batting": 2,
 			"bowling": 4,
 			"fittness": 5
 		},
-		"3": {
+		"p3": {
 			"name": "Aria",
 			"age": 14,
 			"batting": 8,
 			"bowling": 24,
 			"fittness": 10
 		},
-		"4": {
+		"p4": {
 			"name": "Peter",
 			"age": 24,
 			"batting": 8,
 			"bowling": 24,
 			"fittness": 10
 		},
-		"5": {
+		"p5": {
 			"name": "The Dog",
 			"age": 24,
 			"batting": 8,
@@ -87,7 +87,7 @@
 			"fittness": 10
 		}
 	},
-	"match": {
+	"matches": {
 		"11775": {
 			"scored": true,
 			"home": "Ho!",
@@ -101,7 +101,7 @@
 			"motm": "John Snow"
 		}
 	},
-	"rating": {
+	"ratings": {
 		"11775-Ho!": {
 			"batting": 23.4,
 			"bowling": 12.4,

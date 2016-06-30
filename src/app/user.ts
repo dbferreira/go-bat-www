@@ -1,4 +1,3 @@
-import { Users } from './mock-data';
 
 export class User {
 	private joined: number;
@@ -11,10 +10,4 @@ export class User {
 		this.joined = Math.floor(Date.now() / 1000);
 	}
 
-	getUserData() {
-		for (let i = 0; i < Users.length; ++i) {
-			console.log('Importing user: ', Users[i]);
-
-		}
-	}
 }
