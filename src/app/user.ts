@@ -1,7 +1,7 @@
-import { Users } from './mock-data'
+import { Users } from './mock-data';
 
 export class User {
-	private joined: number;	
+	private joined: number;
 	constructor(
 		public username: string,
 		public name: string,
@@ -11,11 +11,10 @@ export class User {
 		this.joined = Math.floor(Date.now() / 1000);
 	}
 
-	getUserData() {	
-		for (var i = 0; i < Users.length; ++i) {
-			console.log("Importing user: ", Users[i]);
-			
-		}
+	getUserData() {
+		for (let i = 0; i < Users.length; ++i) {
+			console.log('Importing user: ', Users[i]);
 
+		}
 	}
 }
