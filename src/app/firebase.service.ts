@@ -48,14 +48,11 @@ export class FirebaseService {
 			.catch(this.errorHandler);
 	}
 
-		private convert(parsedResponse) {
-			return parsedResponse;
-	//	return Object.keys(parsedResponse);
-			/*.map(id => ({
-				id: id,
-				title: parsedResponse[id].title,
-				url: parsedResponse[id].url
-			}));*/
-			//.sort((a, b) => a.title.localeCompare(b.title));
+	private convert(parsedResponse) {
+		const records = [];
+		for (let record in parsedResponse) {
+			records.push(parsedResponse[record]);
+		};
+		return records;
 	}
 }

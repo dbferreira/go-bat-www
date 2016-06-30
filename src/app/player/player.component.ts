@@ -20,10 +20,7 @@ export class PlayerComponent implements OnInit {
 
 	reload() {
 		return this.firebaseService.list('players')
-			.then(players => {
-				console.info("received stuff:", players);
-				this.players = players;
-			});
+			.then(players => this.players = players);
 	}
 
 
