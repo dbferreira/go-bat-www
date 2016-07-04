@@ -1,0 +1,11 @@
+<h4>Users</h4>
+<table class="table table-striped table-hover">
+	<thead>
+		<th>Name</th>
+		<th>Edit</th>
+	</thead>
+	<tr *ngFor="let user of users">
+		<td>{{user | json}}</td>
+		<td><a [routerLink]="['/users',user.id]" class="btn btn-primary btn-xs">Detail</a></td>
+	</tr>
+</table>

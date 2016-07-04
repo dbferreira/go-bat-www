@@ -24,9 +24,9 @@
 			"user": "aG9kb3JAZ21haWwuY29t",
 			"ground-name": "Winterfell",
 			"players": {
-				"1": true,
-				"3": true,
-				"4": true
+				"p1": true,
+				"p3": true,
+				"p4": true
 			},
 			"matches": {
 				"14423": true,
@@ -39,8 +39,8 @@
 			"user": "amFtaWVAZ21haWwuY29t",
 			"ground-name": "Castle Black",
 			"players": {
-				"2": true,
-				"5": true
+				"p2": true,
+				"p5": true
 			},
 			"matches": {
 				"36643": true,

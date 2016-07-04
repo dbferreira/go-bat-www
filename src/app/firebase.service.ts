@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 
 @Injectable()
 export class FirebaseService {
-	baseUrl: string = 'https://go-bat.firebaseio.com/';
+	baseUrl: string = 'https://go-bat.firebaseio.com';
 	errorHandler = error => console.error('BookmarkService error: ', error);
 
 	constructor(private http: Http) { }
@@ -51,6 +51,8 @@ export class FirebaseService {
 	private convert(parsedResponse) {
 		const records = [];
 		for (let record in parsedResponse) {
+			let combinedRecord = parsedResponse[record];
+			combinedRecord.id = record;
 			records.push(parsedResponse[record]);
 		};
 		return records;
