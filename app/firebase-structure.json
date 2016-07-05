@@ -1,0 +1,116 @@
+{
+	"users": {
+		"aG9kb3JAZ21haWwuY29t": {
+			"name": "Big Hodor",
+			"username": "HODOR",
+			"password": "login",
+			"age": 32,
+			"teams": {
+				"Ho!": true
+			}
+		},
+		"amFtaWVAZ21haWwuY29t": {
+			"name": "SirJamie",
+			"username": "Jamie1",
+			"password": "teip",
+			"age": 27,
+			"teams": {
+				"The Lancasters": true
+			}
+		}
+	},
+	"teams": {
+		"Ho!": {
+			"user": "aG9kb3JAZ21haWwuY29t",
+			"ground-name": "Winterfell",
+			"players": {
+				"p1": true,
+				"p3": true,
+				"p4": true
+			},
+			"matches": {
+				"14423": true,
+				"55233": true,
+				"11775": true,
+				"11005": true
+			}
+		},
+		"The Lancasters": {
+			"user": "amFtaWVAZ21haWwuY29t",
+			"ground-name": "Castle Black",
+			"players": {
+				"p2": true,
+				"p5": true
+			},
+			"matches": {
+				"36643": true,
+				"77553": true,
+				"11775": true,
+				"15543": true
+			}
+		}
+	},
+	"players": {
+		"p1": {
+			"name": "John Snow",
+			"age": 24,
+			"batting": 8,
+			"bowling": 24,
+			"fittness": 10
+		},
+		"p2": {
+			"name": "Jamie",
+			"age": 32,
+			"batting": 2,
+			"bowling": 4,
+			"fittness": 5
+		},
+		"p3": {
+			"name": "Aria",
+			"age": 14,
+			"batting": 8,
+			"bowling": 24,
+			"fittness": 10
+		},
+		"p4": {
+			"name": "Peter",
+			"age": 24,
+			"batting": 8,
+			"bowling": 24,
+			"fittness": 10
+		},
+		"p5": {
+			"name": "The Dog",
+			"age": 24,
+			"batting": 8,
+			"bowling": 24,
+			"fittness": 10
+		}
+	},
+	"matches": {
+		"11775": {
+			"scored": true,
+			"home": "Ho!",
+			"away": "The Lancasters",
+			"timestamp": 137759934552,
+			"weather": "Cloudy",
+			"pitch": "Green",
+			"home-score": "422/2",
+			"away-score": "233/10",
+			"winner": "Ho!",
+			"motm": "John Snow"
+		}
+	},
+	"ratings": {
+		"11775-Ho!": {
+			"batting": 23.4,
+			"bowling": 12.4,
+			"overall": 25.63
+		},
+		"11775-The Lancasters": {
+			"batting": 1.4,
+			"bowling": 4.4,
+			"overall": 3.5
+		}
+	}
+}

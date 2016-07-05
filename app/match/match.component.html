@@ -1,0 +1,9 @@
+<h4>Matches</h4>
+<table class="table table-striped table-hover">
+	<thead>
+		<th>Name</th>
+	</thead>
+	<tr *ngFor="let match of matches">
+		<td>{{match | json}}</td>
+	</tr>
+</table>

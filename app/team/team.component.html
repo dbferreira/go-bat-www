@@ -1,0 +1,9 @@
+<h4>Teams</h4>
+<table class="table table-striped table-hover">
+	<thead>
+		<th>Name</th>
+	</thead>
+	<tr *ngFor="let team of teams">
+		<td>{{team | json}}</td>
+	</tr>
+</table>
