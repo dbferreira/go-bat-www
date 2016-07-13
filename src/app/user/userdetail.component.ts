@@ -20,17 +20,12 @@ export class UserDetailComponent implements OnInit {
 		this.route.params
 			.map(params => params['id'])
 			.subscribe((id) => {
-				console.log("subscribing wih id ",id);
 				this.firebaseService
 					.item('users', id)
 					.then(user => {
-						console.info("received a user...", user);
-						this.user = user
+						this.user = user;
 					});
 			});
 	}
-
-
-
 
 }
