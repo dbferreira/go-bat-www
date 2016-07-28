@@ -43,4 +43,6 @@ export class PlayerComponent {
 	//     this.items.remove();
 	//   }
 
+
+
 }
