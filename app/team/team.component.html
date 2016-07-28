@@ -3,7 +3,7 @@
 	<thead>
 		<th>Name</th>
 	</thead>
-	<tr *ngFor="let team of teams">
+	<tr *ngFor="let team of teams | async">
 		<td>{{team | json}}</td>
 	</tr>
 </table>
