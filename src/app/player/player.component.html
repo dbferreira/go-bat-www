@@ -7,11 +7,17 @@
 		<th>Bowling</th>
 		<th>Fitness</th>
 	</thead>
-	<tr *ngFor="let player of players">
+	<tr *ngFor="let player of players | async">
 		<td>{{player.name}}</td>
 		<td>{{player.age}}</td>
 		<td>{{player.batting}}</td>
 		<td>{{player.bowling}}</td>
 		<td>{{player.fitness}}</td>
+		<td><button (click)="deletePlayer(player.$key)">Delete</button></td>
 	</tr>
 </table>
+<label for="newplayer">Name</label>
+<input id="newplayer" type="text" #newplayer />
+<button (click)="addPlayer(newplayer.value)">Add</button>
+<br />
+<button (click)="login()">Login</button>

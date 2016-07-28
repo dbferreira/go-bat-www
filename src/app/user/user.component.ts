@@ -1,29 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { FirebaseService } from '../firebase.service';
+import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
 	moduleId: module.id,
-	providers: [FirebaseService],
 	directives: [ROUTER_DIRECTIVES],
 	selector: 'app-user',
 	templateUrl: 'user.component.html',
 	styleUrls: ['user.component.css']
 })
-export class UserComponent implements OnInit {
-	users = [];
-	constructor(private firebaseService: FirebaseService) {
+export class UserComponent {
+	users: FirebaseListObservable<any[]>;
 
+	constructor(af: AngularFire) {
+		this.users = af.database.list('users');
 	}
-
-	ngOnInit() {
-		this.reload();
-	}
-
-	reload() {
-		return this.firebaseService.list('users')
-			.then(users => this.users = users);
-	}
-
 
 }

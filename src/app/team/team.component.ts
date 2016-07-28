@@ -1,27 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { FirebaseService } from '../firebase.service';
+import { Component } from '@angular/core';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
 	moduleId: module.id,
-	providers: [FirebaseService],
 	selector: 'app-team',
 	templateUrl: 'team.component.html',
 	styleUrls: ['team.component.css']
 })
-export class TeamComponent implements OnInit {
-	teams = [];
-	constructor(private firebaseService: FirebaseService) {
+export class TeamComponent {
+	teams: FirebaseListObservable<any[]>;
 
+	constructor(af: AngularFire) {
+		this.teams = af.database.list('teams');
 	}
-
-	ngOnInit() {
-		this.reload();
-	}
-
-	reload() {
-		return this.firebaseService.list('teams')
-			.then(teams => this.teams = teams);
-	}
-
 
 }

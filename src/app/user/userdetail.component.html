@@ -1,15 +1,15 @@
-<h4>{{user.name}}</h4>
+<h4>{{(user | async)?.name }}</h4>
 <table class="table table-striped table-hover">
 	<tr>
 		<td>Name</td>
-		<td>{{user.name}}</td>
+		<td>{{(user | async)?.name}}</td>
 	</tr>
 	<tr>
 		<td>Age</td>
-		<td>{{user.age}}</td>
+		<td>{{(user | async)?.age}}</td>
 	</tr>
 	<tr>
 		<td>Team</td>
-		<td>{{user.teams | json }}</td>
+		<td>{{(user | async)?.teams | json }}</td>
 	</tr>
 </table>

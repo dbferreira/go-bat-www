@@ -1,27 +1,46 @@
-import { Component, OnInit } from '@angular/core';
-import { FirebaseService } from '../firebase.service';
+import { Component } from '@angular/core';
+import { AngularFire, FirebaseListObservable, AuthProviders, AuthMethods } from 'angularfire2';
 
 @Component({
 	moduleId: module.id,
-	providers: [FirebaseService],
 	selector: 'app-player',
 	templateUrl: 'player.component.html',
 	styleUrls: ['player.component.css']
 })
-export class PlayerComponent implements OnInit {
-	players = [];
-	constructor(private firebaseService: FirebaseService) {
+export class PlayerComponent {
+	players: FirebaseListObservable<any[]>;
 
+	constructor(public af: AngularFire) {
+		this.players = af.database.list('players');
+		this.af.auth.subscribe(auth => console.log(auth));
 	}
 
-	ngOnInit() {
-		this.reload();
+	addPlayer(newName: string) {
+		this.players.push({ name: newName });
 	}
 
-	reload() {
-		return this.firebaseService.list('players')
-			.then(players => this.players = players);
+	deletePlayer(key: string) {
+		this.players.remove(key);
 	}
 
+	login() {
+		this.af.auth.login(
+			{
+				email: 'daniel.ferreira@imqs.co.za',
+				password: '123456'
+			},
+			{
+				provider: AuthProviders.Password,
+				method: AuthMethods.Password
+			});
+	}
+
+	//   update(key: string, newSize: string) {
+	//     this.items.update(key, { size: newSize });
+	//   }
+
+	//   deleteEverything() {
+	//     this.items.remove();
+	//   }
 
 }

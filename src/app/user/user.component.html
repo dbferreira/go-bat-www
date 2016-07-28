@@ -4,8 +4,8 @@
 		<th>Name</th>
 		<th>Edit</th>
 	</thead>
-	<tr *ngFor="let user of users">
+	<tr *ngFor="let user of users | async">
 		<td>{{user | json}}</td>
-		<td><a [routerLink]="['/users',user.id]" class="btn btn-primary btn-xs">Detail</a></td>
+		<td><a [routerLink]="['/users',user.$key]" class="btn btn-primary btn-xs">Detail</a></td>
 	</tr>
 </table>

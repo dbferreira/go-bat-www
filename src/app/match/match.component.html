@@ -3,7 +3,7 @@
 	<thead>
 		<th>Name</th>
 	</thead>
-	<tr *ngFor="let match of matches">
+	<tr *ngFor="let match of matches | async">
 		<td>{{match | json}}</td>
 	</tr>
 </table>

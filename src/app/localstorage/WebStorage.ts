@@ -9,10 +9,6 @@ export function LocalStorage(storageKey?: string) {
 	return WebStorage(storageKey, localStorage);
 }
 
-// export function SessionStorage(storageKey?: string) {
-// 	return WebStorage(storageKey, sessionStorage);
-// }
-
 function WebStorage(storageKey: string, webStorage: IWebStorage) {
 	return (target: Object, decoratedPropertyName?: string): void => {
 		if (!webStorage) {
