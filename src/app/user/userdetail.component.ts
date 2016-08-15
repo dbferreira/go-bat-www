@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 
 @Component({
-	moduleId: module.id,
 	selector: 'app-userdetail',
 	templateUrl: 'userdetail.component.html',
 	styleUrls: ['userdetail.component.css']

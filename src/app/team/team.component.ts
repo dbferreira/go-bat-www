@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
-	moduleId: module.id,
 	selector: 'app-team',
 	templateUrl: 'team.component.html',
 	styleUrls: ['team.component.css']

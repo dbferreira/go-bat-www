@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { AngularFire, FirebaseListObservable, AuthProviders, AuthMethods } from 'angularfire2';
 
 @Component({
-	moduleId: module.id,
 	selector: 'app-player',
 	templateUrl: 'player.component.html',
 	styleUrls: ['player.component.css']

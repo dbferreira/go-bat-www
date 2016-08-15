@@ -1,7 +1,6 @@
-import 'rxjs/Rx';
-import { bootstrap } from '@angular/platform-browser-dynamic';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
-import { AppComponent, environment } from './app/';
+import { AppModule, environment } from './app/';
 import { APP_ROUTER_PROVIDERS } from './app/app.routes';
 import { LocalStorageService, LocalStorageSubscriber } from './app/localstorage/LocalStorageEmitter';
 import { FIREBASE_PROVIDERS,
@@ -14,7 +13,7 @@ if (environment.production) {
 	enableProdMode();
 }
 
-let appPromise = bootstrap(AppComponent, [
+platformBrowserDynamic().bootstrapModule(AppModule, [
 	LocalStorageService,
 	APP_ROUTER_PROVIDERS,
 	FIREBASE_PROVIDERS,
@@ -25,5 +24,3 @@ let appPromise = bootstrap(AppComponent, [
 		storageBucket: 'go-bat.appspot.com'
 	})
 ]).catch(err => console.error(err));
-
-LocalStorageSubscriber(appPromise);

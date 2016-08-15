@@ -3,7 +3,6 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 
 @Component({
-	moduleId: module.id,
 	selector: 'app-match',
 	templateUrl: 'match.component.html',
 	styleUrls: ['match.component.css']

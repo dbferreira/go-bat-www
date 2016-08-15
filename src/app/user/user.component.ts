@@ -3,7 +3,6 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
-	moduleId: module.id,
 	directives: [ROUTER_DIRECTIVES],
 	selector: 'app-user',
 	templateUrl: 'user.component.html',
