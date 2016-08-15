@@ -11,6 +11,7 @@
     "firebase": "registry:npm/firebase#3.0.5+20160723033700"
   },
   "globalDependencies": {
-    "firebase3": "file:node_modules/angularfire2/firebase3.d.ts"
+    "firebase3": "file:node_modules/angularfire2/firebase3.d.ts",
+    "jquery": "registry:dt/jquery#1.10.0+20160704162008"
   }
 }
