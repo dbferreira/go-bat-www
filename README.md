@@ -35,3 +35,8 @@ To get more help on the `angular-cli` use `ng --help` or go check out the [Angul
 npm install angularfire2 firebase --save
 
 typings install file:node_modules/angularfire2/firebase3.d.ts --save --global && typings install
+
+
+# FIX angularfire issues:
+
+https://github.com/angular/angularfire2/blob/master/docs/1-install-and-setup.md
