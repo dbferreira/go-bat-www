@@ -39,4 +39,9 @@ typings install file:node_modules/angularfire2/firebase3.d.ts --save --global &&
 
 # FIX angularfire issues:
 
+
+	npm install firebase angularfire2@next --save
+	typings install firebase
+	npm install typescript@^2.0.0
+
 https://github.com/angular/angularfire2/blob/master/docs/1-install-and-setup.md
