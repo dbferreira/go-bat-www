@@ -5,28 +5,35 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { APP_ROUTER_PROVIDERS } from "./app.routes";
-import {AngularFireModule} from 'angularfire2';
-import *as firebase from 'firebase';
+import { AngularFireModule, AuthMethods, AuthProviders } from 'angularfire2';
+import { AuthGuard } from './auth/auth-guard';
+import { AuthService } from './auth/auth-service';
+import * as firebase from 'firebase';
 
 const firebaseConfig = {
-		apiKey: 'AIzaSyArJBZDD4R4Px5NICnLtV9Dn9yT5X3PH1U',
-		authDomain: 'go-bat.firebaseapp.com',
-		databaseURL: 'https://go-bat.firebaseio.com',
-		storageBucket: 'go-bat.appspot.com'
-	}
+	apiKey: 'AIzaSyArJBZDD4R4Px5NICnLtV9Dn9yT5X3PH1U',
+	authDomain: 'go-bat.firebaseapp.com',
+	databaseURL: 'https://go-bat.firebaseio.com',
+	storageBucket: 'go-bat.appspot.com'
+};
+
+const firebaseAuthConfig = {
+	provider: AuthProviders.Google,
+	method: AuthMethods.Redirect,
+};
 
 @NgModule({
 	declarations: [
 		AppComponent
 	],
 	imports: [
-		AngularFireModule.initializeApp(firebaseConfig),
+		AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
 		BrowserModule,
 		CommonModule,
 		FormsModule,
 		RouterModule
 	],
-	providers: [APP_ROUTER_PROVIDERS],
+	providers: [APP_ROUTER_PROVIDERS, AuthGuard, AuthService],
 	entryComponents: [AppComponent],
 	bootstrap: [AppComponent]
 })

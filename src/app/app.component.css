@@ -1,3 +1,16 @@
 .page-content {
-	padding-top: 60px;
+	padding-top: 70px;
 	}
+
+.logout-button {
+	color: rgba(255,255,255,.75);
+}
+
+.logout-button:hover {
+	color: white;
+}
+
+.user-photo {
+	width: 30px;
+	height: 30px;
+}

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { AngularFire, FirebaseListObservable, AuthProviders, AuthMethods } from 'angularfire2';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AuthService } from '../auth/auth-service';
+import { Player } from '../player';
 
 @Component({
 	selector: 'app-player',
@@ -9,13 +11,14 @@ import { AngularFire, FirebaseListObservable, AuthProviders, AuthMethods } from 
 export class PlayerComponent {
 	players: FirebaseListObservable<any[]>;
 
-	constructor(public af: AngularFire) {
-		this.players = af.database.list('players');
-		this.af.auth.subscribe(auth => console.log(auth));
+	constructor(public af: AngularFire, auth: AuthService) {
+		const path = `/players/${auth.id}`;
+		console.info(path);
+		this.players = af.database.list(path);
 	}
 
 	addPlayer(newName: string) {
-		this.players.push({ name: newName });
+		this.players.push(new Player({name: newName}));
 	}
 
 	deletePlayer(key: string) {
@@ -23,16 +26,10 @@ export class PlayerComponent {
 	}
 
 	login() {
-		this.af.auth.login(
-			{
-				email: 'daniel.ferreira@imqs.co.za',
-				password: '123456'
-			},
-			{
-				provider: AuthProviders.Password,
-				method: AuthMethods.Password
-			});
+		this.af.auth.login();
 	}
+
+
 
 	//   update(key: string, newSize: string) {
 	//     this.items.update(key, { size: newSize });

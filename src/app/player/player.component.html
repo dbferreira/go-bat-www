@@ -6,6 +6,7 @@
 		<th>Batting</th>
 		<th>Bowling</th>
 		<th>Fitness</th>
+		<th></th>
 	</thead>
 	<tr *ngFor="let player of players | async">
 		<td>{{player.name}}</td>
@@ -13,11 +14,16 @@
 		<td>{{player.batting}}</td>
 		<td>{{player.bowling}}</td>
 		<td>{{player.fitness}}</td>
-		<td><button (click)="deletePlayer(player.$key)">Delete</button></td>
+		<td><button (click)="deletePlayer(player.$key)" type="button" class="btn btn-outline-primary btn-sm pull-xs-right">
+				<i class="fa fa-trash-o" aria-hidden="true"></i>
+			</button></td>
 	</tr>
 </table>
-<label for="newplayer">Name</label>
-<input id="newplayer" type="text" #newplayer />
-<button (click)="addPlayer(newplayer.value)">Add</button>
+<div class="form-group row">
+	<label for="newplayer" class="col-xs-2 col-form-label">Name</label>
+	<div class="col-xs-10">
+		<input class="form-control" type="text" placeholder="Player Name" id="newplayer" #newplayer>
+	</div>
+</div>
+	<button (click)="addPlayer(newplayer.value)" type="button" class="btn btn-primary">Add</button>
 <br />
-<button (click)="login()">Login</button>

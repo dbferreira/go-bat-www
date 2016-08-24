@@ -45,3 +45,6 @@ typings install file:node_modules/angularfire2/firebase3.d.ts --save --global &&
 	npm install typescript@^2.0.0
 
 https://github.com/angular/angularfire2/blob/master/docs/1-install-and-setup.md
+
+
+Similar project: https://github.com/r-park/todo-angular2-firebase
