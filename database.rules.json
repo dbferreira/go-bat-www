@@ -1,0 +1,34 @@
+{
+  "rules": {
+    //".read": true, // Read any values
+    //".write": "auth != null", // Write any value when authed
+    "players": {
+      "$uid": {
+        ".read": "auth !== null && auth.uid === $uid",
+        ".write": "auth !== null && auth.uid === $uid",
+        ".indexOn": ["completed"]
+      }
+    },
+    "users": {
+      "$uid": {
+        ".read": "auth !== null && auth.uid === $uid",
+        ".write": "auth !== null && auth.uid === $uid",
+        ".indexOn": ["completed"]
+      }
+    },
+    "teams": {
+      "$uid": {
+        ".read": "auth !== null && auth.uid === $uid",
+        ".write": "auth !== null && auth.uid === $uid",
+        ".indexOn": ["completed"]
+      }
+    },
+    "matches": {
+      "$uid": {
+        ".read": "auth !== null && auth.uid === $uid",
+        ".write": "auth !== null && auth.uid === $uid",
+        ".indexOn": ["completed"]
+      }
+    }
+  }
+}

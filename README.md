@@ -1,4 +1,4 @@
-# GoBatWww
+# GoBatWww - https://go-bat.firebaseapp.com
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.11-webpack.2.
 
@@ -51,3 +51,10 @@ Similar projects:
 	https://github.com/r-park/todo-angular2-firebase
 	https://github.com/funnytao/angular2-dashboard
 	
+
+
+## Deploy to firebase hosting:
+
+firebase deploy
+
+https://go-bat.firebaseapp.com
