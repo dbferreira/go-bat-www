@@ -45,6 +45,11 @@ export class AuthService {
 		return this.signIn(AuthProviders.Twitter);
 	}
 
+	signInWithFacebook() {
+		return this.signIn(AuthProviders.Facebook);
+	}
+
+
 	signOut(): void {
 		this.af.logout();
 	}

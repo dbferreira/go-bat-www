@@ -22,7 +22,7 @@
 		<ul *ngIf="!auth.authenticated" class="nav navbar-nav pull-xs-right">
 			<li class="nav-item">
 				<a class="nav-link">
-					<button (click)="auth.signInWithGoogle()" type="button" class="btn btn-secondary btn-sm pull-xs-right">
+					<button [routerLink]="['/signin']" type="button" class="btn btn-secondary btn-sm pull-xs-right">
 						Login
 						<i class="fa fa-sign-in fa-lg" aria-hidden="true"></i>
 					</button>
