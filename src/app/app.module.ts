@@ -10,6 +10,7 @@ import { AuthGuard } from './auth/auth-guard';
 import { UnauthGuard } from './auth/unauth-guard';
 import { AuthService } from './auth/auth-service';
 import * as firebase from 'firebase';
+import { UserlandingpageComponent } from './userlandingpage/userlandingpage.component';
 
 const firebaseConfig = {
 	apiKey: 'AIzaSyArJBZDD4R4Px5NICnLtV9Dn9yT5X3PH1U',
@@ -25,7 +26,7 @@ const firebaseAuthConfig = {
 
 @NgModule({
 	declarations: [
-		AppComponent
+		AppComponent, UserlandingpageComponent
 	],
 	imports: [
 		AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),

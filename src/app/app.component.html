@@ -1,7 +1,8 @@
 <nav class="navbar navbar-fixed-top navbar-dark bg-primary">
 	<button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">&#9776;</button>
 	<div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-		<a class="navbar-brand" [routerLink]="['/']">{{title}}</a>
+		<a *ngIf="!auth.authenticated" class="navbar-brand" [routerLink]="['/']">{{title}}</a>
+		<a *ngIf="auth.authenticated" class="navbar-brand" [routerLink]="['/home']">{{title}}</a>
 		<ul class="nav navbar-nav">
 			<li *ngIf="auth.authenticated" class="nav-item" [routerLinkActive]="['active']"><a class="nav-link" [routerLink]="['/teams']">Teams</a></li>
 			<li *ngIf="auth.authenticated" class="nav-item" [routerLinkActive]="['active']"><a class="nav-link" [routerLink]="['/players']">Players</a></li>

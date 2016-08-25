@@ -28,6 +28,6 @@ export class SignInComponent {
 
 	private postSignIn(): void {
 		console.info("post sign-in");
-		this.router.navigate(['/players']);  // Change to navigate to logged-in home
+		this.router.navigate(['/home']);
 	}
 }

@@ -7,15 +7,20 @@ import { SignInComponent } from './auth/sign-in';
 
 import { TeamComponent } from './team/team.component';
 import { MatchComponent } from './match/match.component';
+import { UserlandingpageComponent } from './userlandingpage/userlandingpage.component';
 import { UserRoutes } from './user/user.routes';
 
 export const routes: RouterConfig = [
-	...UserRoutes,
+	// Public pages
 	{ path: '', component: PublicpageComponent },
 	{ path: 'signin', component: SignInComponent, canActivate: [UnauthGuard] },
+
+	// Private pages
+	{ path: 'home', component: UserlandingpageComponent, canActivate: [AuthGuard]},
 	{ path: 'players', component: PlayerComponent, canActivate: [AuthGuard] },
 	{ path: 'teams', component: TeamComponent, canActivate: [AuthGuard] },
 	{ path: 'matches', component: MatchComponent, canActivate: [AuthGuard] },
+	...UserRoutes,
 ];
 
 export const APP_ROUTER_PROVIDERS = [
