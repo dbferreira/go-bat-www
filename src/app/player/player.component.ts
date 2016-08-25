@@ -14,11 +14,15 @@ export class PlayerComponent {
 	constructor(public af: AngularFire, auth: AuthService) {
 		const path = `/players/${auth.id}`;
 		console.info(path);
-		this.players = af.database.list(path);
+		if (auth.id) { this.players = af.database.list(path); };
 	}
 
 	addPlayer(newName: string) {
-		this.players.push(new Player({name: newName}));
+		this.players.push(new Player({
+			name: newName,
+			age: 25,
+			fitness: 7.34
+		}));
 	}
 
 	deletePlayer(key: string) {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AuthService } from '../auth/auth-service';
 
 @Component({
 	selector: 'app-team',
@@ -9,8 +10,9 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 export class TeamComponent {
 	teams: FirebaseListObservable<any[]>;
 
-	constructor(af: AngularFire) {
-		this.teams = af.database.list('teams');
+	constructor(af: AngularFire, auth: AuthService) {
+		const path = `/teams/${auth.id}`;
+		this.teams = af.database.list(path);
 	}
 
 }
