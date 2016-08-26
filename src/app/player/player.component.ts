@@ -9,12 +9,15 @@ import { Player } from '../player';
 	styleUrls: ['player.component.css']
 })
 export class PlayerComponent {
+	loading: boolean = true;
 	players: FirebaseListObservable<any[]>;
 
 	constructor(public af: AngularFire, auth: AuthService) {
 		const path = `/players/${auth.id}`;
-		console.info(path);
-		if (auth.id) { this.players = af.database.list(path); };
+		this.players = af.database.list(path);
+		this.players.subscribe((p) => {
+			this.loading = false;
+		});
 	}
 
 	addPlayer(newName: string) {

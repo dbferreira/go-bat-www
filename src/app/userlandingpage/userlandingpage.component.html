@@ -1,3 +1,15 @@
-<p>
-  userlandingpage works!
+<!--Each of these will likely end up being a complete separate component-->
+<p *ngIf="!newUser && !loading && !receivedNewTeam">
+	Welcome back!
+</p>
+<p *ngIf="newUser && !loading">
+	Hang tight, we're recruiting a brand spanking new team for you!
+</p>
+<p *ngIf="loading">
+	Loading...
+</p>
+<p *ngIf="!loading && receivedNewTeam">
+	<img src="app/userlandingpage/fireworks.gif" alt="fireworks">
+	<br>
+	Congratulations on your new team!  Meet your new players...
 </p>
