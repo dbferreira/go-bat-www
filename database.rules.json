@@ -2,32 +2,37 @@
   "rules": {
     //".read": true, // Read any values
     //".write": "auth != null", // Write any value when authed
+    "queues": {
+      "teams": {
+        "$uid": {
+          ".read": false,
+          ".write": "auth !== null && auth.uid === $uid && (!data.exists() || !newData.exists())",
+          ".indexOn": ["completed"]
+        }
+      }
+    },
     "players": {
       "$uid": {
         ".read": "auth !== null && auth.uid === $uid",
-        ".write": "auth !== null && auth.uid === $uid",
-        ".indexOn": ["completed"]
+        ".write": "auth !== null && auth.uid === $uid"
       }
     },
     "users": {
       "$uid": {
         ".read": "auth !== null && auth.uid === $uid",
-        ".write": "auth !== null && auth.uid === $uid",
-        ".indexOn": ["completed"]
+        ".write": "auth !== null && auth.uid === $uid"
       }
     },
     "teams": {
       "$uid": {
         ".read": "auth !== null && auth.uid === $uid",
-        ".write": "auth !== null && auth.uid === $uid",
-        ".indexOn": ["completed"]
+        ".write": "auth !== null && auth.uid === $uid"
       }
     },
     "matches": {
       "$uid": {
         ".read": "auth !== null && auth.uid === $uid",
-        ".write": "auth !== null && auth.uid === $uid",
-        ".indexOn": ["completed"]
+        ".write": "auth !== null && auth.uid === $uid"
       }
     }
   }
