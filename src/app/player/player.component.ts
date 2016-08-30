@@ -10,6 +10,7 @@ import { Player } from '../player';
 })
 export class PlayerComponent {
 	loading: boolean = true;
+	isViewTable: boolean = false;
 	players: FirebaseListObservable<any[]>;
 	countries: string[] = ['ZA', 'ZW', 'AU', 'NZ', 'GB', 'IN', 'LK', 'PK'];
 
@@ -36,6 +37,10 @@ export class PlayerComponent {
 
 	login() {
 		this.af.auth.login();
+	}
+
+	setView(view: string) {
+		this.isViewTable = view === 'table';
 	}
 
 
