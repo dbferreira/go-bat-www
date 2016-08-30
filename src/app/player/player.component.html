@@ -24,22 +24,19 @@
 	<button (click)="addPlayer(newplayer.value)" type="button" class="btn btn-primary">Add</button>
 	<br />
 	<br />
-	<div *ngIf="!isViewTable" class="row">
+	<div *ngIf="!isViewTable" class="">
 		<div *ngFor="let player of players | async" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-			<div class="card card-block">
-				<div class="row">
-					<div class="col-xs-10">
-						<h4 class="card-title"><div class="flag-icon flag-icon-{{player.nationality}} m-r-1"></div>{{player.name}}</h4>
-					</div>
-					<div class="col-xs-2">
-						<button (click)="deletePlayer(player.$key)" type="button" class="btn btn-outline-primary btn-sm pull-xs-right">
+			<div class="card">
+				<h5 class="card-header"><div class="flag-icon flag-icon-{{player.nationality}}"></div>{{player.name}}
+				<button (click)="deletePlayer(player.$key)" type="button" class="btn btn-outline-primary btn-sm pull-xs-right">
 							<i class="fa fa-trash-o" aria-hidden="true"></i>
 						</button>
-					</div>
+				</h5>
+				<div class="card-block">
+					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					<a href="#" class="card-link">Card link</a>
+					<a href="#" class="card-link">Another link</a>
 				</div>
-				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-				<a href="#" class="card-link">Card link</a>
-				<a href="#" class="card-link">Another link</a>
 			</div>
 		</div>
 	</div>
