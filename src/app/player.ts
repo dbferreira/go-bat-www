@@ -6,6 +6,7 @@ export interface IPlayer {
 	createdAt: number;
 	name: string;
 	age: number;
+	nationality: string;
 	batting: number;
 	bowling: number;
 	fitness: number;
@@ -16,6 +17,7 @@ export class Player implements IPlayer {
 	createdAt: number;
 	name: string;
 	age: number;
+	nationality: string;
 	batting: number;
 	bowling: number;
 	fitness: number;
@@ -23,6 +25,6 @@ export class Player implements IPlayer {
 
 	constructor(values: Object) {
 		(<any>Object).assign(this, values);
-
 	}
+
 }

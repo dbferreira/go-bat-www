@@ -11,6 +11,7 @@ import { Player } from '../player';
 export class PlayerComponent {
 	loading: boolean = true;
 	players: FirebaseListObservable<any[]>;
+	countries: string[] = ['ZA', 'ZW', 'AU', 'NZ', 'GB', 'IN', 'LK', 'PK'];
 
 	constructor(public af: AngularFire, auth: AuthService) {
 		const path = `/players/${auth.id}`;
@@ -24,6 +25,7 @@ export class PlayerComponent {
 		this.players.push(new Player({
 			name: newName,
 			age: 25,
+			nationality: this.countries[Math.floor(Math.random() * this.countries.length)].toLowerCase(),
 			fitness: 7.34
 		}));
 	}

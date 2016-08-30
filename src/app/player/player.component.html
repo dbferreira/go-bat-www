@@ -3,6 +3,7 @@
 <div *ngIf="!loading" class="container-fluid">
 	<table class="table table-striped table-hover">
 		<thead>
+			<th>Country</th>
 			<th>Name</th>
 			<th>Age</th>
 			<th>Batting</th>
@@ -11,6 +12,7 @@
 			<th></th>
 		</thead>
 		<tr *ngFor="let player of players | async">
+			<td><span class="flag-icon flag-icon-{{player.nationality}} flag-icon-squared"></span></td>
 			<td>{{player.name}}</td>
 			<td>{{player.age}}</td>
 			<td>{{player.batting}}</td>
