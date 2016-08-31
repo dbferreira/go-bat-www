@@ -1,0 +1,15 @@
+<div class="container">
+	<div class="container text-xs-center">
+		<form class="form-signin">
+			<h2 class="form-signin-heading">Sign Up</h2>
+			<small class="text-muted">Create a new Go-Bat account</small>
+			<br>
+			<div class="form-group" [class.has-danger]="dataError">
+				<div class="form-control-feedback small">{{dataError}}</div>
+				<input id="email" class="form-control login-input form-control-danger" placeholder="Email Address" type="email" #email required>
+				<input id="password" class="form-control login-input-pass" placeholder="Password" type="password" #password required>
+			</div>
+			<button (click)="signUp(email.value, password.value)" class="btn btn-lg btn-primary btn-block btn-center" type="submit">Sign up</button>
+		</form>
+	</div>
+</div>

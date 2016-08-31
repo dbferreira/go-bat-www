@@ -4,6 +4,7 @@ import { PublicpageComponent } from './publicpage/publicpage.component';
 import { AuthGuard } from './auth/auth-guard';
 import { UnauthGuard } from './auth/unauth-guard';
 import { SignInComponent } from './auth/sign-in';
+import { SignUpComponent } from './auth/sign-up';
 
 import { TeamComponent } from './team/team.component';
 import { MatchComponent } from './match/match.component';
@@ -14,6 +15,7 @@ export const routes: RouterConfig = [
 	// Public pages
 	{ path: '', component: PublicpageComponent },
 	{ path: 'signin', component: SignInComponent, canActivate: [UnauthGuard] },
+	{ path: 'signup', component: SignUpComponent, canActivate: [UnauthGuard] },
 
 	// Private pages
 	{ path: 'home', component: UserlandingpageComponent, canActivate: [AuthGuard]},

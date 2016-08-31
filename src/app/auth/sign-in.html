@@ -1,8 +1,7 @@
-
 <div class="container">
 
 	<div class="container text-xs-center">
-		<form class="form-signin" data-ember-action="2">
+		<form class="form-signin">
 			<h2 class="form-signin-heading">Sign in</h2>
 
 			<small class="text-muted">Connect Go-Bat with your favorite social network</small>
@@ -19,14 +18,14 @@
 			<small class="text-muted">Or sign in with Go-Bat</small>
 			<br>
 
-			<input id="ember360" class="ember-view ember-text-field form-control login-input" placeholder="Email Address" type="text">
-			<input id="ember361" class="ember-view ember-text-field form-control login-input-pass" placeholder="Password" type="password">
+			<div class="form-group" [class.has-danger]="loginError">
+				<div class="form-control-feedback small">{{loginError}}</div>
+				<input id="email" class="form-control login-input form-control-danger" placeholder="Email Address" type="email" #email>
+				<input id="password" class="form-control login-input-pass" placeholder="Password" type="password" #password>
+			</div>
 
-			<script id="metamorph-22-start" type="text/x-placeholder"></script>
-			<script id="metamorph-22-end" type="text/x-placeholder"></script>
-
-			<button class="btn btn-lg btn-primary btn-block btn-center" type="submit" data-bindattr-3="3">Sign in</button>
+			<button (click)="signInWithPassword(email.value, password.value)" class="btn btn-lg btn-primary btn-block btn-center" type="submit">Sign in</button>
 			<br>
-			<small class="create-account text-muted">Dont have a Go-Bat or social network account? <button id="ember363" class="ember-view btn btn-sm btn-default"> Sign Up </button> </small>
+			<small class="create-account text-muted">Dont have a Go-Bat or social network account? <button  [routerLink]="['/signup']" class="btn btn-sm btn-default"> Sign Up </button> </small>
 		</form>
 	</div>

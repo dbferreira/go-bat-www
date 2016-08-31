@@ -9,7 +9,7 @@ import { AngularFireModule, AuthMethods, AuthProviders } from 'angularfire2';
 import { AuthGuard } from './auth/auth-guard';
 import { UnauthGuard } from './auth/unauth-guard';
 import { AuthService } from './auth/auth-service';
-import * as firebase from 'firebase';
+// import * as firebase from 'firebase';
 import { UserlandingpageComponent } from './userlandingpage/userlandingpage.component';
 
 const firebaseConfig = {
