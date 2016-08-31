@@ -14,7 +14,7 @@
 
 		<ul *ngIf="auth.authenticated" class="nav navbar-nav pull-xs-right">
 			<li class="nav-item">
-				<a class="nav-link">
+				<a class="nav-link navbar-user">
 					<span *ngIf="!auth.photo">{{ auth.email }}</span>
 					<a href="/" class="logout-button"><i (click)="auth.signOut()" class="fa fa-sign-out fa-lg" aria-hidden="true"></i></a>
 					<img *ngIf="auth.photo" src="{{ auth.photo }}" alt="user-photo" class="user-photo img-circle">

@@ -9,6 +9,7 @@ import { Player } from '../player';
 	styleUrls: ['player.component.css']
 })
 export class PlayerComponent {
+	newplayer: string = '';
 	loading: boolean = true;
 	isViewTable: boolean = false;
 	players: FirebaseListObservable<any[]>;
@@ -22,13 +23,14 @@ export class PlayerComponent {
 		});
 	}
 
-	addPlayer(newName: string) {
+	addPlayer(input: HTMLInputElement) {
 		this.players.push(new Player({
-			name: newName,
+			name: input.value,
 			age: 25,
 			nationality: this.countries[Math.floor(Math.random() * this.countries.length)].toLowerCase(),
 			fitness: 7.34
 		}));
+		input.value = '';
 	}
 
 	deletePlayer(key: string) {

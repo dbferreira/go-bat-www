@@ -18,10 +18,10 @@
 	<div class="form-group row">
 		<label for="newplayer" class="col-xs-2 col-form-label">Name</label>
 		<div class="col-xs-10">
-			<input class="form-control" type="text" placeholder="Player Name" id="newplayer" #newplayer>
+			<input class="form-control" type="text" placeholder="Player Name" id="newplayer" #newplayer (keyup.enter)="addPlayer(newplayer)" ngControl="newplayer">
 		</div>
 	</div>
-	<button (click)="addPlayer(newplayer.value)" type="button" class="btn btn-primary">Add</button>
+	<button (click)="addPlayer(newplayer)" type="button" class="btn btn-primary">Add</button>
 	<br />
 	<br />
 	<div *ngIf="!isViewTable" class="">
