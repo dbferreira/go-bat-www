@@ -11,6 +11,7 @@ export class UserlandingpageComponent implements OnInit {
 	newUser: boolean = false;
 	loading: boolean = true;
 	receivedNewTeam: boolean = false;
+	countries: string[] = ['ZA', 'ZW', 'AU', 'NZ', 'GB', 'IN', 'LK', 'PK'];
 	team: FirebaseObjectObservable<any[]>;
 	auth: AuthService;
 
@@ -33,9 +34,9 @@ export class UserlandingpageComponent implements OnInit {
 		this.receivedNewTeam = true;
 	}
 
-	createTeam(teamName: HTMLInputElement): void {
+	createTeam(teamName: HTMLInputElement, region: HTMLSelectElement): void {
 
-		// Todo: validate name to check for duplicates and possibly remove swear words
+		// Todo: validate name to check for duplicates and possibly remove swear words (https://github.com/raymondjavaxx/swearjar-node)
 		this.af.database.object(`queues/teams/${this.auth.id}`)
 			.set({
 				user: this.auth.id,
