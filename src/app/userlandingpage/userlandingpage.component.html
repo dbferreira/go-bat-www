@@ -1,15 +1,30 @@
-<!--Each of these will likely end up being a complete separate component-->
-<p *ngIf="!newUser && !loading && !receivedNewTeam">
-	Welcome back!
-</p>
-<p *ngIf="newUser && !loading">
-	Hang tight, we're recruiting a brand spanking new team for you!
-</p>
-<p *ngIf="loading">
+
+<!--Loading before showing any info-->
+<div *ngIf="loading">
 	Loading...
-</p>
-<p *ngIf="!loading && receivedNewTeam">
+</div>
+
+<!--Existing team logging in-->
+<div *ngIf="!newUser && !loading && !receivedNewTeam">
+	Welcome back {{(team | async)?.name}}!
+</div>
+
+<!--Brand new team to choose a new name-->
+<div *ngIf="newUser && !loading">
+	<p>You're new here! Please choose a name for your new team</p>
+	<div class="form-group">
+			<input class="form-control" type="text" placeholder="Team Name" id="teamName" #teamName (keyup.enter)="createTeam(teamName)" ngControl="teamName">
+	</div>
+	<button (click)="createTeam(teamName)" type="button" class="btn btn-primary">Start!</button>
+</div>
+
+<!--New team just created-->
+<div *ngIf="!loading && receivedNewTeam">
 	<img src="app/userlandingpage/fireworks.gif" alt="fireworks">
 	<br>
-	Congratulations on your new team!  Meet your new players...
-</p>
+	<p>Congratulations on your new team! Meet your new players...</p>
+	<br>
+	<button [routerLink]="['/players']" type="button" class="btn btn-secondary">
+			Players
+	</button>
+</div>

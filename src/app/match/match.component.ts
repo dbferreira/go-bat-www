@@ -9,10 +9,12 @@ import { AuthService } from '../auth/auth-service';
 })
 export class MatchComponent {
 	matches: FirebaseListObservable<any[]>;
+	auth: AuthService;
 
-	constructor(af: AngularFire, auth: AuthService) {
+	constructor(public af: AngularFire, auth: AuthService) {
 		const path = `/matches/${auth.id}`;
 		this.matches = af.database.list(path);
+		this.auth = auth;
 	}
 
 }

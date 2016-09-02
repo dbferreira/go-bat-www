@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 import { AuthService } from '../auth/auth-service';
 
 @Component({
@@ -11,29 +11,37 @@ export class UserlandingpageComponent implements OnInit {
 	newUser: boolean = false;
 	loading: boolean = true;
 	receivedNewTeam: boolean = false;
-	teams: FirebaseListObservable<any[]>;
+	team: FirebaseObjectObservable<any[]>;
+	auth: AuthService;
 
 	constructor(public af: AngularFire, auth: AuthService) {
+		this.auth = auth;
 		const path = `/teams/${auth.id}`;
-		this.teams = af.database.list(path);
-		this.teams.subscribe((t) => {
-			if (this.newUser && t.length > 0) {
-				this.receivedTeam(t[0]);
-			};
+		this.team = af.database.object(path);
+		this.team.subscribe((t) => {
 			this.loading = false;
-			this.newUser = t.length === 0;
-			if (this.newUser) {
-				af.database.object(`queues/teams/${auth.id}`)
-					.set({
-						user: auth.id,
-						created: new Date().getTime()
-					});
+			if (t['$value'] === null && !this.receivedNewTeam && !this.newUser) {
+				this.newUser = true;
+			} else if (this.newUser) {
+				this.receivedTeam(t);
 			}
 		});
 	}
 
 	receivedTeam(team: any): void {
+		this.newUser = false;
 		this.receivedNewTeam = true;
+	}
+
+	createTeam(teamName: HTMLInputElement): void {
+
+		// Todo: validate name to check for duplicates and possibly remove swear words
+		this.af.database.object(`queues/teams/${this.auth.id}`)
+			.set({
+				user: this.auth.id,
+				name: teamName.value,
+				created: new Date().getTime()
+			});
 	}
 
 	ngOnInit() {
