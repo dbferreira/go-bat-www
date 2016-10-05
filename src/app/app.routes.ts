@@ -21,7 +21,7 @@ export const appRoutes: Routes = [
 	// Private pages
 	{ path: 'home', component: UserlandingpageComponent, canActivate: [AuthGuard]},
 	{ path: 'players', component: PlayerComponent, canActivate: [AuthGuard] },
-	{ path: 'teams', component: TeamComponent, canActivate: [AuthGuard] },
+	{ path: 'myteam', component: TeamComponent, canActivate: [AuthGuard] },
 	{ path: 'matches', component: MatchComponent, canActivate: [AuthGuard] },
 	...UserRoutes,
 ];
