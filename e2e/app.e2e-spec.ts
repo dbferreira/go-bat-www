@@ -1,10 +1,10 @@
-import { GoBatWwwPage } from './app.po';
+import { MigrationProjectPage } from './app.po';
 
-describe('go-bat-www App', function() {
-  let page: GoBatWwwPage;
+describe('migration-project App', function() {
+  let page: MigrationProjectPage;
 
   beforeEach(() => {
-    page = new GoBatWwwPage();
+    page = new MigrationProjectPage();
   });
 
   it('should display message saying app works', () => {

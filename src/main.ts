@@ -1,12 +1,14 @@
+import './polyfills.ts';
+
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
-import { AppModule, environment } from './app/';
-import { APP_ROUTER_PROVIDERS } from './app/app.routes';
+import { AppModule } from './app/';
+import { environment } from './environments/environment';
+
+window['jQuery'] = require('jquery');
 
 if (environment.production) {
-	enableProdMode();
+  enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule, [
-	APP_ROUTER_PROVIDERS
-]).catch(err => console.error(err));
+platformBrowserDynamic().bootstrapModule(AppModule);

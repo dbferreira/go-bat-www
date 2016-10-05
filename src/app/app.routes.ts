@@ -1,4 +1,5 @@
-import { provideRouter, RouterConfig } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
 import { PlayerComponent } from './player/player.component';
 import { PublicpageComponent } from './publicpage/publicpage.component';
 import { AuthGuard } from './auth/auth-guard';
@@ -11,7 +12,7 @@ import { MatchComponent } from './match/match.component';
 import { UserlandingpageComponent } from './userlandingpage/userlandingpage.component';
 import { UserRoutes } from './user/user.routes';
 
-export const routes: RouterConfig = [
+export const appRoutes: Routes = [
 	// Public pages
 	{ path: '', component: PublicpageComponent },
 	{ path: 'signin', component: SignInComponent, canActivate: [UnauthGuard] },
@@ -25,7 +26,8 @@ export const routes: RouterConfig = [
 	...UserRoutes,
 ];
 
-export const APP_ROUTER_PROVIDERS = [
-	provideRouter(routes)
+export const appRoutingProviders: any[] = [
+
 ];
 
+export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

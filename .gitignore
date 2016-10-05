@@ -14,7 +14,6 @@
 .classpath
 *.launch
 .settings/
-.vscode/*.DB*
 
 # misc
 /.sass-cache
