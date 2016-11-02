@@ -8,6 +8,15 @@
 	Welcome back {{(team | async)?.name}}!
 </div>
 
+<div class="container">
+	<br><br>
+	<div class="row">
+		<div class="col-md-2 offset-md-5 ">
+			<button (click)="createRandomTeam()" type="button" class="btn btn-warning btn-lg" [disabled]="canAddTeam">Spawn Team!</button>
+		</div>
+	</div>
+</div>
+
 <!--Brand new team to choose a new name-->
 <div *ngIf="newUser && !loading">
 	<div class="container text-xs-center">
@@ -17,7 +26,8 @@
     	</select>
 		<br>
 		<div class="form-group">
-			<input class="form-control" type="text" placeholder="Team Name" id="teamName" #teamName (keyup.enter)="createTeam(teamName, teamCountry)" ngControl="teamName">
+			<input class="form-control" type="text" placeholder="Team Name" id="teamName" #teamName (keyup.enter)="createTeam(teamName, teamCountry)"
+				ngControl="teamName">
 		</div>
 
 		<button (click)="createTeam(teamName, teamCountry)" type="button" class="btn btn-primary">Start!</button>
