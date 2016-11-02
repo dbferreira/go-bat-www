@@ -53,6 +53,7 @@ export class UserlandingpageComponent implements OnInit {
       .set({
         user: this.auth.id,
         name: teamName.value,
+        region: region,
         created: new Date().getTime()
       });
   }
@@ -60,10 +61,12 @@ export class UserlandingpageComponent implements OnInit {
   createRandomTeam(): void {
     const userID = Math.round(Math.random() * 1000);
     const teamName = 'Test Team ' + userID;
+    const useRegion = this.countries[Math.round(Math.random() * 8)];
     this.af.database.object(`queues/teams/${this.auth.id}`)
       .set({
         user: this.auth.id,
         name: teamName,
+        region: useRegion,
         created: new Date().getTime()
       });
   }

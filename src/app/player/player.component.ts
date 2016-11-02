@@ -34,15 +34,19 @@ export class PlayerComponent {
         this.canAddPlayer = true;
       }
     });
-
   }
 
   addPlayer() {
-    this.playerQueue
-      .set({
-        user: this.auth.id,
-        created: new Date().getTime()
-      });
+    const afTeam = this.af.database.object(`teams/${this.auth.id}`);
+    afTeam.subscribe((team) => {
+      const teamRegion = team.region;
+      this.playerQueue
+        .set({
+          user: this.auth.id,
+          region: teamRegion,
+          created: new Date().getTime()
+        });
+    });
   }
 
   deletePlayer(key: string) {
