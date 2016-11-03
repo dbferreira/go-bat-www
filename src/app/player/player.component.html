@@ -25,7 +25,7 @@
 			<!--<div *ngFor="let player of players | async" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">-->
 			<article class="card" *ngFor="let player of players | async">
 				<h6 class="card-header">
-					<div class="flag-icon flag-icon-{{player.nationality}}"></div>{{player.name}}
+					<div class="flag-icon flag-icon-{{player.nationality}}"></div>{{player.name}} {{player.surname}}
 					<button (click)="deletePlayer(player.$key)" type="button" class="btn btn-outline-primary btn-sm pull-xs-right">
 							<i class="fa fa-trash-o" aria-hidden="true"></i>
 						</button>
@@ -50,7 +50,7 @@
 		<tr *ngFor="let player of players | async">
 			<td>
 				<div class="flag-icon flag-icon-{{player.nationality}} m-r-1"></div>
-				{{player.name}}
+				{{player.name}} {{player.surname}}
 			</td>
 			<td>{{player.age}}</td>
 			<td>{{player.batting}}</td>
