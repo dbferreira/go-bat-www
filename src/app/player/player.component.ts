@@ -53,9 +53,9 @@ export class PlayerComponent {
     this.players.remove(key);
   }
 
-  login() {
-    this.af.auth.login();
-  }
+  // login() {
+  //   this.af.auth.login();
+  // }
 
   setView(view: string) {
     this.isViewTable = view === 'table';
