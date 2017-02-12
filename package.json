@@ -4,7 +4,7 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
-    "start": "ng serve",
+    "start": "ng serve --host 0.0.0.0 --port 4200 --live-reload-port 49153",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
@@ -21,10 +21,10 @@
     "@angular/platform-browser-dynamic": "2.0.0",
     "@angular/router": "3.0.0",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.6",
-    "angularfire2": "^2.0.0-beta.5",
+    "angularfire2": "^2.0.0-beta.7.1-pre",
     "bootstrap": "^4.0.0-alpha.6",
     "core-js": "^2.4.1",
-    "firebase": "^3.4.1",
+    "firebase": "^3.6.9",
     "flag-icon-css": "^2.4.0",
     "font-awesome": "^4.6.3",
     "jquery": "^3.1.1",
@@ -34,7 +34,7 @@
     "zone.js": "^0.6.23"
   },
   "devDependencies": {
-    "@types/jasmine": "^2.2.30",
+    "@types/jasmine": "2.5.41",
     "angular-cli": "1.0.0-beta.16",
     "codelyzer": "~0.0.26",
     "jasmine-core": "2.4.1",
@@ -47,6 +47,6 @@
     "protractor": "4.0.9",
     "ts-node": "1.2.1",
     "tslint": "3.13.0",
-    "typescript": "2.0.2"
+    "typescript": "2.0.10"
   }
 }
