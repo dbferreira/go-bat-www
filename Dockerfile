@@ -6,8 +6,7 @@ WORKDIR /usr/src/app
 
 # Install app dependencies
 COPY ./package.json /usr/src/app/
-RUN npm install -g @angular/cli
-RUN npm install
+RUN npm install && npm install -g @angular/cli
 
 EXPOSE 4200
 CMD [ "npm", "start" ]
