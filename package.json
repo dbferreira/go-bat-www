@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "2.0.0",
     "@angular/router": "3.0.0",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.6",
+    "@ngtools/webpack": "^1.2.4",
     "angularfire2": "^2.0.0-beta.7.1-pre",
     "bootstrap": "^4.0.0-alpha.6",
     "core-js": "^2.4.1",

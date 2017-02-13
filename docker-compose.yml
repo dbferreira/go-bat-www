@@ -1,8 +1,9 @@
 version: "3"
-services: 
+services:
     web:
         build: .
-        volumes: 
+        volumes:
             - .:/usr/src/app
         ports:
             - "4200:4200"
+            - "49153:49153"

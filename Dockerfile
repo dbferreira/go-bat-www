@@ -8,6 +8,5 @@ WORKDIR /usr/src/app
 COPY ./package.json /usr/src/app/
 RUN npm install && npm install -g @angular/cli
 
-EXPOSE 4200
 CMD [ "npm", "start" ]
-# CMD ["sleep", "1000000"] 
+# CMD ["sleep", "1000000"]
