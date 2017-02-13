@@ -39,6 +39,7 @@
   },
   "defaults": {
     "styleExt": "css",
-    "prefixInterfaces": false
+    "prefixInterfaces": false,
+	"poll": 1000
   }
 }
