@@ -2,6 +2,14 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.11-webpack.2.
 
+## Docker support
+
+Just run `docker-compose up -d` to start the server and listen for file-changes.
+
+View the docker logs: `docker-compose logs -f`
+Execute commands in the docker container: `docker exec -it <containerID> bash`
+Stop container: `docker-compose stop`
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
